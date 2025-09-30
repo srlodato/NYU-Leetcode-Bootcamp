@@ -1,5 +1,5 @@
 # NYU-Leetcode-Bootcamp
-Bootcamp Topics & Timeline \\
+Bootcamp Topics & Timeline
 
 Week 1 (9/29 & 9/30): Lists, Arrays, Sorting
 
