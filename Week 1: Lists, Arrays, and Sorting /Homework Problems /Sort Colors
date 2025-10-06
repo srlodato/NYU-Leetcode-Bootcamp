@@ -1,1 +1,23 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        p1 = 0 #between 0s and 1s
+        p2 = 0 #current element
+        p3 = len(nums) - 1 #between 1s and 2s
 
+        # 0: move to the front (swap with p1)
+        # 1: move on (p2)
+        # 2: move to the end (swap with p3)
+
+        while p2 <= p3:
+            if nums[p2] == 0:
+                #swap with p1 to the front
+                nums[p1], nums[p2] = nums[p2], nums[p1]
+                p1 += 1
+                p2 += 1
+            elif nums[p2] == 1:
+                #move on
+                p2 += 1
+            else:
+                #swap 2 with p3
+                nums[p2], nums[p3] = nums[p3], nums[p2]
+                p3 -= 1
