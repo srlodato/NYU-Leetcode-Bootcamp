@@ -1,1 +1,8 @@
-
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        #Remove leading spaces and split the string into words
+        w = s.strip().split()
+        #reverse the words
+        w.reverse()
+        #add the space between each word and join them
+        return ' '.join(w)
