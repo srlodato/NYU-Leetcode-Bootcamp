@@ -1,1 +1,40 @@
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        #Skip over the whitespace
+        i = 0
+        l = len(s)
+        while i < l and s[i] == ' ':
+            i += 1
+        
+        #The case where string is all spaces
+        if i == l:
+            return 0
+        
+        #Start with positive sign
+        sign = 1
+        if s[i] == '+':
+            i += 1
+        elif s[i] == '-':
+            sign = -1
+            i += 1
+        
+        #Convert to digits
+        num = 0
+        while i < l and s[i].isdigit():
+            digit = int(s[i])
+            num = num * 10 + digit
+            i += 1
+        
+        #Add the positive or negative sign
+        num *= sign
 
+        #Rounding
+        NUM_MIN = -2**31
+        NUM_MAX = 2**31 - 1
+
+        if num < NUM_MIN:
+            return NUM_MIN
+        elif num > NUM_MAX:
+            return NUM_MAX
+        else:
+            return num
